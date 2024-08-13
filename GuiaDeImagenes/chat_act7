@@ -1,0 +1,25 @@
+from PIL import Image
+
+def convert_to_black_and_white(input_path, output_path):
+    """
+    Convierte una imagen a blanco y negro y la guarda en la ruta especificada.
+    
+    :param input_path: Ruta de la imagen original.
+    :param output_path: Ruta donde se guardará la imagen en blanco y negro.
+    """
+    # Abrir la imagen original
+    with Image.open(input_path) as img:
+        # Convertir la imagen a modo blanco y negro
+        bw_img = img.convert('L')
+        
+        # Guardar la imagen en blanco y negro
+        bw_img.save(output_path)
+
+# Ruta de la imagen original
+input_path = 'path_to_your_image.jpg'
+
+# Ruta de salida para la imagen en blanco y negro
+output_path = 'path_to_your_image_bw.jpg'
+
+# Convertir y guardar la imagen en blanco y negro
+convert_to_black_and_white(input_path, output_path)
